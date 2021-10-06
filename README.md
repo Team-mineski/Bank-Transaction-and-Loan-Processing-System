@@ -8,7 +8,11 @@ loan processing services and the other various functions and activities of the b
 
 ## Sample Screenshots
 
-![Alt text](/screenshots/Customer.png?raw=true "Optional Title")
+![Alt text](/screenshots/Dashboard.png?raw=true "Dashboard")
+  
+![Alt text](/screenshots/Customer.png?raw=true "Customer - Savings Account Creation")
+  
+![Alt text](/screenshots/Loan%20Application.png?raw=true "Employee - Loan Application")
 ## Installation
 
 Clone the project.
