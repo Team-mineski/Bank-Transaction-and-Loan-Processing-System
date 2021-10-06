@@ -8,8 +8,7 @@ loan processing services and the other various functions and activities of the b
 
 ## Sample Screenshots
 
-
-
+![Alt text](/screenshots/Customer.png?raw=true "Optional Title")
 ## Installation
 
 Clone the project.
