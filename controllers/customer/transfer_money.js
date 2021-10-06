@@ -21,7 +21,6 @@ const getTransactionForm = async (request,response)=>{
     try {
         const today = await Lookup.getTodayDate();
         const savingsIds = await Customer.getAllSavingsAccountIDs(request.user.customer_id);
-        console.log(savingsIds);
         response.render('customer/transfer_money.ejs',{
             today:today,
             savingsIds:savingsIds
@@ -38,7 +37,6 @@ const getTransactionFormChecking = async (request,response)=>{
     try {
         const today = await Lookup.getTodayDate();
         const savingsIds = await Customer.getAllCheckingAccountIDs(request.user.customer_id);
-        console.log(savingsIds);
         response.render('customer/transfer_money.ejs',{
             today:today,
             savingsIds:savingsIds

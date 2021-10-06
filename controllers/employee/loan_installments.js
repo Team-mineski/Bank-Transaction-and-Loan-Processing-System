@@ -24,7 +24,6 @@ const getLoanInstallmentInformation = async (req, res)=>{
         }
     }
     catch (error) {
-        console.log(error);
         return response.render('500', {
             err_msg: error
         });
@@ -36,7 +35,6 @@ const payLateLoanInstallment = async (req, res) => {
     try {
         const result = await Employee.payLateInstallment(loan_id, req.body.installment_id, req.body.due_month, req.body.due_year);
     } catch (error) {
-        console.log(error);
         return response.render('500', {
             err_msg: error
         });
@@ -50,7 +48,6 @@ const payCurrentLoanInstallment = async (req, res) => {
         const late_installments = await Employee.payCurrentInstallment(loan_id);
 
     } catch (error) {
-        console.log(error);
         return response.render('500', {
             err_msg: error
         });

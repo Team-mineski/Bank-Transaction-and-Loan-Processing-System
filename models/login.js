@@ -18,9 +18,6 @@ function getPassword(email, table) {
                     resolve(null);
                 }
                 else {
-                    console.log(result.sql);
-                    console.log(results);
-                    console.log(results[0]);
                     resolve(results[0]);
                     
                 }

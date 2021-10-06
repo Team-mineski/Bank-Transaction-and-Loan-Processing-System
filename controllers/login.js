@@ -18,7 +18,6 @@ function generateAuthToken(payload) {
     const token = jwt.sign(payload, config.get('jwtPrivateKey'), {
         expiresIn: process.env.ONE_HOUR
     });
-    // console.log(token);
     return token;
 }
 
@@ -111,7 +110,6 @@ const login = async (request, response) => {
             }
 
             const token = generateAuthToken(payload);
-            // console.log(token);
             request.session.token = token;
             return response.status(200).render(redirect);
             

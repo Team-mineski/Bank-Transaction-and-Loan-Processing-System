@@ -23,7 +23,6 @@ const createOnlineLoan = async (request,response) => {
     if (error) return response.status(400).render('400', {
         err_msg: "Invalid Token"
     });
-    console.log(request.body);
     request.body.created_date = Lookup.getTodayDate();
     const interest_rates = request.body.interest_rate;
     const time_periods= request.body.account_period_in_months

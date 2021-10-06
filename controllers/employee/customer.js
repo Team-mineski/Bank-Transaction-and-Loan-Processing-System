@@ -52,7 +52,6 @@ const createIndividualCustomer = async (request, response) => {
     const {error} = validateIndividual(request.body);
 
     if (error) {
-        console.log(error);
         var err_msg = "Your passwords do not match";
         return response.render('employee/individual_error', {
             error_msg: err_msg,
@@ -75,7 +74,6 @@ const createIndividualCustomer = async (request, response) => {
                     ["full_name", "address", "national_ID", "date_of_birth", "personal_contact_no", "residential_contact_no", "date_joined", "email", "password"]));
 
     } catch (error) {
-        console.log(error);
         return response.status(400).render('400', {
             err_msg: error
         });
@@ -84,10 +82,8 @@ const createIndividualCustomer = async (request, response) => {
 };
 
 const createCorporateCustomer = async (request, response) => {
-    console.log(request.body);
     const {error} = validateCorporate(request.body);
     if (error) {
-        console.log(error);
         var err_msg = "Your passwords do not match";
         return response.render('employee/corporate_error', {
             error_msg: err_msg,
@@ -121,13 +117,10 @@ const createCorporateCustomer = async (request, response) => {
 
 
 const findCustomerProfile = async (req, res) => {
-    console.log(req.body);
     const privilege_level = req.body.privilege_level;
     req.session.customer_id = req.body.customer_id;
     req.session.privilege_level = privilege_level;
     const profile = await Customer.getProfileInformation(req.body.customer_id,privilege_level);
-    console.log("Profile");
-    console.log(profile);
     if (!profile || profile.length == 0) {
         return res.render('employee/customer_profile_and_functions', {
             customerExists: false

@@ -14,8 +14,6 @@ const getPendingLoans = async(request,response)=>{
         else{
             loans = await  BranchManager.getPendingLoans(request.user.branch_id);
         }
-        
-        console.log(loans);
         response.render('branch_manager/loan_approval',{loans:loans, branch:request.user.branch_id});
 
     } catch (error) {
@@ -25,8 +23,6 @@ const getPendingLoans = async(request,response)=>{
 }
 
 const proceedLoan = async(request,response)=>{
-    console.log(request.body);
-
     try {
         if(request.body.type == "Approve"){
             await BranchManager.approveLoan(request.body.loan_id);
@@ -37,7 +33,6 @@ const proceedLoan = async(request,response)=>{
         } 
         response.redirect('back');
     } catch (error) {
-        console.log(error);
         return response.status(500).render("500", {err_msg:error});
     }
 

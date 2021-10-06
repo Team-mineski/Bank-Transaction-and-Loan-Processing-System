@@ -29,7 +29,6 @@ class Employee {
                 [],
                 function (error, results, fields) {
                     if (error) {
-                        console.log(result.sql);
                         reject(error);
                     };
                     resolve(results);
@@ -47,10 +46,8 @@ class Employee {
                 ],
                 function (error, results, fields) {
                     if (error) {
-                        console.log(error);
                         reject(error);
                     };
-                    console.log(result.sql);
                     resolve(result.length!=0);
                 }
             )
@@ -58,7 +55,6 @@ class Employee {
     }
 
     static payLateInstallment(loan_id, installment_id, month, year) {
-        console.log("Model");
         return new Promise((resolve, reject) => {
             const result = pool.query("CALL pay_late_loan_installment (?,?,?,?)",
                 [
@@ -66,10 +62,8 @@ class Employee {
                 ],
                 function (error, results, fields) {
                     if (error) {
-                        console.log(error);
                         return reject(error);
                     };
-                    console.log(result.sql);
                     return resolve(true);
                 }
             )
@@ -84,10 +78,8 @@ class Employee {
                 ],
                 function (error, results, fields) {
                     if (error) {
-                        console.log(error);
                         return reject(error);
                     };
-                    console.log(result.sql);
                     return resolve(true);
                 }
             )
@@ -100,10 +92,8 @@ class Employee {
                 [loan_id, "Not paid"],
                 function (error, results, fields) {
                     if (error) {
-                        console.log(result.sql);
                         return reject(error);
                     };
-                    console.log(results);
                     return resolve(results);
                 }
             )
@@ -116,11 +106,8 @@ class Employee {
                 [loan_id],
                 function (error, results, fields) {
                     if (error) {
-                        console.log(result.sql);
                         return reject(error);
                     };
-                    console.log(result.sql);
-                    console.log(results);
                     return resolve(results);
                 }
             )
@@ -183,7 +170,6 @@ class Employee {
                 ],
                 function (error, results, fields) {
                     if (error) {
-                        console.log(result.sql);
                         return reject(error);
 
                     };
@@ -210,7 +196,6 @@ class Employee {
                     if (error) {
                         reject(error);
                     };
-                    console.log(result.sql);
                     resolve(console.log("succesful"));
                 }
             )
@@ -234,7 +219,6 @@ class Employee {
                 ],
                 function (error, results, fields) {
                     if (error) {
-                        console.log(result.sql);
                         reject(result);
                     };
                     
@@ -261,7 +245,6 @@ class Employee {
                 ],
                 function (error, results, fields) {
                     if (error) {
-                        console.log(error);
                         reject(result);
                     };
                     resolve(console.log("Done"));
@@ -276,10 +259,8 @@ class Employee {
                 [],
                 function (error, results, fields) {
                     if (error) {
-                        console.log(error);
                         reject(result);
                     };
-                    console.log(results);
                     resolve(results);
                 }
             )
@@ -293,7 +274,6 @@ class Employee {
                 [],
                 function (error, results, fields) {
                     if (error) {
-                        console.log(error);
                         reject(result);
                     };
                     resolve(results);
@@ -309,7 +289,6 @@ class Employee {
                 [],
                 function (error, results, fields) {
                     if (error) {
-                        console.log(error);
                         reject(result);
                     };
                     resolve(results);
@@ -327,7 +306,6 @@ class Employee {
                 [],
                 function (error, results, fields) {
                     if (error) {
-                        console.log(error);
                         reject(result);
                     };
                     resolve(results);
@@ -343,7 +321,6 @@ class Employee {
                 [],
                 function (error, results, fields) {
                     if (error) {
-                        console.log(error);
                         reject(result);
                     };
                     resolve(results);
@@ -359,7 +336,6 @@ class Employee {
                 [customerID],
                 function (error, results, fields) {
                     if (error) {
-                        console.log(error);
                         reject(result);
                     };
                     resolve(results);

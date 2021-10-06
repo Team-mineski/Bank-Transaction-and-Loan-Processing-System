@@ -5,7 +5,6 @@ class Lookup{
 
     static getTodayDate() {
         let now = new Date();
-        console.log(now);
         var dd = now.getDate();
         var mm = now.getMonth() + 1;
         var yyyy = now.getFullYear();
@@ -35,7 +34,6 @@ class Lookup{
             mm = '0' + mm;
         }
         cutoffDate = yyyy + '-' + mm + '-' + dd;
-        console.log(cutoffDate);
         return cutoffDate;
     }
 

@@ -11,7 +11,6 @@ function validateEmployee(Employee) {
     const now = Date.now();
     const cutoffDate = new Date(now - (1000 * 60 * 60 * 24 * 365 * 18));
 
-    // console.log(date);
     const schema = Joi.object({
         'full_name': Joi.string().required(),
         'address': Joi.string().required(),
@@ -29,7 +28,6 @@ function validateEmployee(Employee) {
 
 // URL:localhost:3000/branch_manager/employee/create
 const createEmployee = async (request, response) => {
-    console.log(request.body);
     const { error } = validateEmployee(request.body);
     if (error) {
         var err_msg = "Your passwords do not match";

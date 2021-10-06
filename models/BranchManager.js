@@ -34,12 +34,8 @@ class BranchManager {
                 ],
                 function (error, results, fields) {
                     if (error) {
-                        console.log(result.sql);
-                        console.log(error);
                         reject(error);
                     };
-                    console.log(result.sql);
-                    console.log(results);
                     resolve(results);
                 }
             )
@@ -56,11 +52,8 @@ class BranchManager {
                 ],
                 function (error, results, fields) {
                     if (error) {
-                        console.log(result.sql);
                         reject(error);
                     };
-                    console.log(result.sql);
-                    console.log(results);
                     resolve(results);
                 }
             )
@@ -79,11 +72,8 @@ class BranchManager {
                 ],
                 function (error, results, fields) {
                     if (error) {
-                        console.log(result.sql);
                         reject(error);
                     };
-                    console.log(result.sql);
-                    console.log(results);
                     resolve(results);
                 }
             )
@@ -101,11 +91,8 @@ class BranchManager {
                 ],
                 function (error, results, fields) {
                     if (error) {
-                        console.log(result.sql);
                         reject(error);
                     };
-                    console.log(result.sql);
-                    console.log(results);
                     resolve(results);
                 }
             )
@@ -120,11 +107,8 @@ class BranchManager {
                 ],
                 function (error, results, fields) {
                     if (error) {
-                        console.log(result.sql);
                         reject(error);
                     };
-                    console.log(result.sql);
-                    console.log(results);
                     resolve(results);
                 }
             )
@@ -136,11 +120,8 @@ class BranchManager {
             const result = pool.query("SELECT * FROM normal_loan NATURAL JOIN loan_plan WHERE normal_loan.status = 'Pending'",
                 function (error, results, fields) {
                     if (error) {
-                        console.log(result.sql);
                         reject(error);
                     };
-                    console.log(result.sql);
-                    console.log(results);
                     resolve(results);
                 }
             )
@@ -156,10 +137,8 @@ class BranchManager {
                 ],
                 function (error, results, fields) {
                     if (error) {
-                        console.log(result.sql);
                         reject(error);
                     };
-                    console.log(result.sql);
                     resolve("Accepted");
                 }
             )
@@ -175,7 +154,6 @@ class BranchManager {
                 ],
                 function (error, results, fields) {
                     if (error) {
-                        console.log(result.sql);
                         reject(error);
                     };
                  

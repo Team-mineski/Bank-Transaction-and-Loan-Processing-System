@@ -3,7 +3,6 @@ const BranchManager = require('../../models/BranchManager');
 
 
 const generateReport = async (request, response) => {
-    console.log(request.body);
     const branch_id = request.user.branch_id;
     const month = request.body.month;
     const year = request.body.year;
@@ -11,7 +10,6 @@ const generateReport = async (request, response) => {
     if (request.body.type == "Generate Transactions Report") {
         try {
             if(branch_id ==1){
-                console.log('giyaaaa');
                 results = await BranchManager.getAllTransationsHO(month, year);
             }
             else{

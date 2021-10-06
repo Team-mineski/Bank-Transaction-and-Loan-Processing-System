@@ -16,7 +16,6 @@ function validateAmount(amount,maxAmount) {
 
 const getAllSavingsAccounts = async (req, res) => {
     const customer_id = req.user.customer_id;
-    console.log(req.user.privilege_level);
     const accounts = await Customer.getAllSavingsAccounts(customer_id);
     return res.render('customer/view_all_savings_accounts', {
         accounts: accounts
@@ -42,15 +41,12 @@ const getAllFixedDeposits = async (req, res) => {
 const getAllSavingsAccountsForWithdraw = async (req, res) => {
     const customer_id = req.user.customer_id;
     const accounts = await Customer.getAllSavingsAccountsForWithdraw(customer_id);
-    console.log(accounts);
     return res.render('customer/withdraw', {
         accounts: accounts
     });
 }
 
 const Withdraw = async (req, res) => {
-
-    console.log(req.body);
 
     req.body.account = JSON.parse(req.body.account_id);
     var maxAmount = req.body.account.max_withdrawal_limit;
@@ -60,7 +56,6 @@ const Withdraw = async (req, res) => {
     
     if (error)
     {
-        console.log(error);
         return res.status(400).render('400', {
             err_msg: `You tried to withdraw more than your maximum allowed limit of ${maxAmount}`
         });
@@ -68,7 +63,6 @@ const Withdraw = async (req, res) => {
 
     req.body.account.date = Lookup.getTodayDate();
     req.body.account.withdrawal_amount = req.body.amount;
-    console.log(req.body);
 
     if (parseFloat(req.body.account.withdrawal_amount) <= parseFloat(req.body.account.bank_balance) && limit - 1 >= 0 && parseFloat(req.body.amount) <= parseFloat(maxAmount))
     {
@@ -77,21 +71,18 @@ const Withdraw = async (req, res) => {
             return res.render('customer/home');
         }
         catch (error) {
-        console.log(error);
         return res.render('500', {
             err_msg: error
         });
         }
     } 
     else if(limit - 1 < 0){
-        console.log("No withdrawals remaining for this month");
         return res.render('400', {
             err_msg: "No withdrawals remaining for this month"
         });
 
     }
     else {
-        console.log("Insufficient bank balance");
         return res.render('400', {
             err_msg: "Insufficient bank balance"
         });
@@ -114,7 +105,6 @@ const deposit = async (req,res) => {
     req.body.account.deposit_amount = req.body.amount;
 
     if(req.body.amount<=0){
-        console.log("Deposite Amount Should be Positive");
         return res.render('400', {
             err_msg: "Deposit amount Should be positive"
         });

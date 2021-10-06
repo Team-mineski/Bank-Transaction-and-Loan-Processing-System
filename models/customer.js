@@ -28,8 +28,6 @@ class Customer{
                     if (error) {
                         reject(new Error(error.message));
                     }
-                    console.log(result.sql);
-                    console.log(results);
                     resolve(results);
                 }
             )
@@ -50,7 +48,6 @@ class Customer{
                     reject(error);
                 }
                 else {
-                    console.log(result.sql);
                     resolve(console.log("successssss!!!"));
                 }
                 
@@ -73,11 +70,8 @@ class Customer{
                 ],
                 function (error, results, fields) {
                     if (error) {
-                        console.log(result.sql);
                         reject(error);
                     };
-                        console.log(result.sql);
-
                     resolve(console.log("succesful"));
                 }
             )
@@ -93,10 +87,8 @@ class Customer{
                 ],
                 function (error, results, fields) {
                     if (error) {
-                        console.log(error);
                         reject(error);
                     };
-                    console.log(results);
                     resolve(results);
                 }
             )
@@ -113,10 +105,8 @@ class Customer{
                 ],
                 function (error, results, fields) {
                     if (error) {
-                        console.log(error);
                         reject(error);
                     };
-                    console.log(results);
                     resolve(results);
                 }
             )
@@ -138,7 +128,6 @@ class Customer{
                     reject(error);
                 }
                 else {
-                    console.log(result.sql);
                     resolve(console.log("successssss!!!"));
                 }
                 
@@ -157,10 +146,8 @@ class Customer{
                 ],
                 function (error, results, fields) {
                     if (error) {
-                        console.log(error);
                         reject(error);
                     };
-                    console.log(results);
                     resolve(results);
                 }
             )
@@ -178,10 +165,8 @@ class Customer{
                 ],
                 function (error, results, fields) {
                     if (error) {
-                        console.log(error);
                         reject(error);
                     };
-                    console.log(results);
                     resolve(results);
                 }
             )
@@ -197,10 +182,8 @@ class Customer{
                 ],
                 function (error, results, fields) {
                     if (error) {
-                        console.log(error);
                         reject(error);
                     };
-                    console.log(results);
                     resolve(results);
                 }
             )
@@ -217,10 +200,8 @@ f
                 ],
                 function (error, results, fields) {
                     if (error) {
-                        console.log(error);
                         reject(error);
                     };
-                    console.log(results);
                     resolve(results);
                 }
             )
@@ -233,7 +214,6 @@ f
                 [],
                 function (error, results, fields) {
                     if (error) {
-                        console.log(error);
                         reject(result);
                     };
                     resolve(results);
@@ -249,7 +229,6 @@ f
                 [],
                 function (error, results, fields) {
                     if (error) {
-                        console.log(error);
                         reject(result);
                     };
                     resolve(results);
@@ -270,10 +249,8 @@ f
                 ],
                 function (error, results, fields) {
                     if (error) {
-                        console.log(error);
                         reject(error);
                     };
-                    console.log(results);
                     resolve(results);
                 }
             )
@@ -297,10 +274,8 @@ f
                 ],
                 function (error, results, fields) {
                     if (error) {
-                        console.log(error);
                         reject(error);
                     };
-                    console.log(results);
                     resolve(results);
                 }
             )
@@ -320,12 +295,8 @@ f
                 ],
                 function (error, results, fields) {
                     if (error) {
-                        console.log(result.sql);
                         reject(error);
                     };
-                    console.log(result.sql);
-                    console.log(results);
-                    console.log(results.changedRows);
                     resolve(results.changedRows);
                 }
             )
@@ -343,7 +314,6 @@ f
                 ],
                 function (error, results, fields) {
                     if (error) {
-                        console.log(result.sql);
                         reject(error);
                     };
                 resolve(results.changedRows);

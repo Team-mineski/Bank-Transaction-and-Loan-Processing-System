@@ -18,7 +18,5 @@ if (!config.has('jwtPrivateKey')) {
 
 app.use(express.static('public'));
 
-console.log(config.get('jwtPrivateKey'));
-
 const port = process.env.PORT || 3000;
 app.listen(port, () => console.log(`Listening on port ${port}...`));

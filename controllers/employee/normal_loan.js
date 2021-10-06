@@ -38,7 +38,6 @@ const createNormalLoan = async (request,response) => {
     const { error } = validateNormalLoan(_.pick(request.body,
         ["loan_plan_id", "account_id", "loan_amount"]));
     if (error) return response.status(400).render('400',{err_msg: error.details[0].message});
-    console.log(request.body);
     const loan_plan_id = request.body.loan_plan_id;
     const account_id = request.body.account_id;
     const created_date = Lookup.getTodayDate();
@@ -80,7 +79,6 @@ const searchNormalLoan = async (req, res) => {
         });
     }
     catch (error) {
-        console.log(error);
         return response.status(500).render('500', {
             err_msg: error
         });;

@@ -12,7 +12,6 @@ module.exports = function (request, response, next) {
         request.user = decoded;
         next(); //calls the route handler
     } catch (error) {
-        console.log(token);
         return response.status(400).render('400', {
             err_msg: "Invalid Token"
         });

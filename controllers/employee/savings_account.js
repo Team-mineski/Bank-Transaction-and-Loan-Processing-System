@@ -29,8 +29,6 @@ const createSavingsAccount = async (request, response) => {
         });
     }
     try {
-        console.log(request.body.minimum_balance);
-        console.log(request.body.minimum_balance[parseInt(request.body.savings_plan_id) - 1]);
         if (parseFloat(request.body.minimum_balance[parseInt(request.body.savings_plan_id) - 1]) > parseFloat(request.body.bank_balance)) {
             return response.status(400).render('400', {
                 err_msg: "Your bank balance must be greater than the minimum balance of the plan you selected"
@@ -42,7 +40,6 @@ const createSavingsAccount = async (request, response) => {
             err_msg: error.message
         });
     }
-    console.log(request.session);
     return response.render('employee/customer_profile_and_functions', {
         customerExists: true,
         profile: request.session.profile,
@@ -55,7 +52,6 @@ const getSavingsAccountForm = async (request, response) => {
         const plans = await Employee.getAllSavingsAccountPlans();
         const id = await Employee.getSavingsAccountID();
         const date = Lookup.getTodayDate();
-        console.log(id);
         return response.status(200).render('employee/savings_account', {
             plans: plans,
             customer_id: request.session.customer_id,
