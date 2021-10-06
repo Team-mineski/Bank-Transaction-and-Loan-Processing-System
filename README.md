@@ -1,13 +1,18 @@
-# Bank-Transaction-and-Loan-Processing-System
-INSTALLING
+# Bank Transaction and Loan Processing System
 
-To install, run (in the base folder)
+## Introduction
 
-1)npm init --yes
-2) npm install
+> * This project is a web application that provides an online platform for bank transaction services, 
+loan processing services and the other various functions and activities of the bank.
+* Developed as part of Semester 4 CS3042 Database Systems module.
 
-If any code doesn't work in the VSCode integrated terminal (like when setting environmental variables) use the windows terminal instead.
+## Sample Screenshots
 
-DATABASE INFORMATION
 
-Database used: MySQL
+
+## Installation
+
+Clone the project.
+  Run the following commands.
+* npm install
+* npm start
